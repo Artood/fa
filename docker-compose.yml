@@ -2,8 +2,8 @@ services:
 
   fa_python:
 #    entrypoint: sh start.sh
-#    command: /bin/sh -c "while true; do sleep 30; done"
-    command: uvicorn main:app --port 8009 --host 0.0.0.0
+    command: /bin/sh -c "while true; do sleep 30; done"
+#    command: uvicorn main:app --port 8009 --host 0.0.0.0
     container_name: fa_python
     build:
       context: .
