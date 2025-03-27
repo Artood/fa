@@ -1,11 +1,8 @@
 #!/bin/sh
 
-# Ожидание запуска PostgreSQL
+# Ожидаем доступность БД
 echo "Waiting for PostgreSQL to start..."
-while ! nc -z fa_postgres 5432; do   
-  sleep 1
-done
-echo "PostgreSQL started"
+sleep 5  # Можно заменить на healthcheck
 
 # Инициализация Alembic
 echo "Checking Alembic migrations..."
