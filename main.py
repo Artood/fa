@@ -17,7 +17,7 @@ class Client(Base):
     __tablename__ = "clients"
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
-    inn = Column(String, unique=True, nullable=True)
+    inn = Column(String, unique=True, nullable=False)
     contract_number = Column(String, nullable=True)
     contact_person = Column(String, nullable=True)
     external_prefix = Column(String, nullable=True)
@@ -35,7 +35,7 @@ def get_db():
 
 class ClientCreate(BaseModel):
     name: str
-    inn: str | None = None
+    inn: str 
     contract_number: str | None = None
     contact_person: str | None = None
     external_prefix: str | None = None
